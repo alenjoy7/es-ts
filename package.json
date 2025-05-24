@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch --env-file .env --import=tsx src/index.ts",
-    "build": "tsc --project tsconfig.json",
+    "build": "tsc -p tsconfig.json",
     "start": "node --env-file .env dist/src/index.js"
   },
   "keywords": [],
@@ -29,7 +29,8 @@
     "pino-pretty": "^13.0.0",
     "prisma": "^6.8.2",
     "ts-node": "^10.9.2",
-    "tsx": "^4.19.4"
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
   },
   "prisma": {
     "schema": "./prisma"
