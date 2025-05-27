@@ -12,6 +12,10 @@ This is a template project for building RESTful APIs using [Express](https://exp
 - [Scalar](https://scalar.com/) for OpenAPI documentation UI (served at `/docs`)
 - [Zod](https://zod.dev/) for schema validation
 
+## Scalar Preview
+![image](https://github.com/user-attachments/assets/427086ff-0453-43ea-a46c-010ee60a691e)
+
+
 ## Getting Started
 
 ### 1. Clone the Template
@@ -70,6 +74,7 @@ The server will start on the port specified in your `.env` file (default is 8080
 - OpenAPI documentation is served using Scalar UI at `/docs`.
 - All request/response validation is handled using Zod schemas.
 - Logging is handled by Pino for high performance.
+
 
 ## License
 
