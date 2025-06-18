@@ -4,6 +4,7 @@ import { logging } from "./middlewares/logger.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
 import itemRoutes from "./routes/itemRoutes.js";
 import { apiReference } from "@scalar/express-api-reference";
+import config from "./config/config.js";
 // this should be last import
 import { apiReferenceOptions } from "./config/swagger.js";
 
@@ -13,9 +14,7 @@ app.use(express.json());
 app.use(logging);
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN
-      ? process.env.CORS_ORIGIN.split(",").map((origin) => origin.trim())
-      : ["*"],
+    origin: config.corsOrigins,
     credentials: true,
   })
 );

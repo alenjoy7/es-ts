@@ -1,7 +1,8 @@
 import { pino } from "pino";
+import config from "../config/config.js";
 
 const log = pino({
-  level: process.env.PINO_LOG_LEVEL ?? "info",
+  level: config.LOG_LEVEL,
   transport: {
     target: "pino-pretty",
     options: {
