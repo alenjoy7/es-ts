@@ -62,6 +62,17 @@ pnpm dev
 
 The server will start on the port specified in your `.env` file (default is 8080).
 
+## Running with Docker
+
+You can build and run the application using Docker:
+
+```sh
+docker build -t es-ts .
+docker run -p 8080:8080 es-ts
+```
+
+The server will be available at [http://localhost:8080](http://localhost:8080).
+
 ## Project Structure
 
 - `src/` - Source code (routes, controllers, middlewares, utils, etc.)
