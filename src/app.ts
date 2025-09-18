@@ -5,8 +5,7 @@ import { errorHandler } from "./middlewares/errorHandler.js";
 import itemRoutes from "./routes/itemRoutes.js";
 import { apiReference } from "@scalar/express-api-reference";
 import config from "./config/config.js";
-// this should be last import
-import { apiReferenceOptions } from "./config/swagger.js";
+import { generateApiReference } from "./config/swagger.js";
 
 const app = express();
 
@@ -18,8 +17,13 @@ app.use(
     credentials: true,
   })
 );
-app.use("/docs", apiReference(apiReferenceOptions));
+
+// Register all routes first
 app.use("/api/items", itemRoutes);
+// Add any other routes here...
+
+// Then initialize API reference after all routes are registered
+app.use("/docs", apiReference(generateApiReference()));
 
 app.use(errorHandler);
 
